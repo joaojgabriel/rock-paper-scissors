@@ -21,8 +21,8 @@ function getPlayerChoice() {
   return capitalize(input);
 }
 
-function capitalize(text) {
-  return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+function capitalizeLowerCase(text) {
+  return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
 function playRound(playerChoice, computerChoice) {
