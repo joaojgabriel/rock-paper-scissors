@@ -11,6 +11,17 @@ function getComputerChoice() {
   }
 }
 
+function getPlayerChoice() {
+  let input;
+
+  while (!(input === "rock" || input === "paper" || input === "scissors")) {
+    input = prompt("Choose Rock, Paper or Scissor").toLowerCase();
+  }
+
+  let capitalizedInput = input.charAt(0).toUpperCase() + input.slice(1);
+  return capitalizedInput;
+}
+
 function playRound(playerChoice, computerChoice) {
   if (playerChoice === computerChoice) {
     return `It's a tie! Both chose ${playerChoice}!`;
