@@ -1,4 +1,4 @@
-const fiveRoundsGame = () => {
+const playFiveRounds = () => {
   for (let i = 0; i < 5; i++) {
     alert(playRound(getPlayerChoice(), getComputerChoice()));
   }
