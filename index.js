@@ -1,6 +1,13 @@
 const playFiveRounds = () => {
-  for (let i = 0; i < 5; i++) {
-    alert(playRound(getPlayerChoice(), getComputerChoice()));
+  let roundsPlayed = 0;
+
+  while (roundsPlayed < 5) {
+    let playerChoice = getPlayerChoice();
+    let computerChoice = getComputerChoice();
+    let roundResult = playRound(playerChoice, computerChoice);
+    roundsPlayed++;
+
+    alert(roundResult);
   }
 };
 
