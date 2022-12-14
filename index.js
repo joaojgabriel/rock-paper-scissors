@@ -1,3 +1,9 @@
+const fiveRoundsGame = () => {
+  for (let i = 0; i < 5; i++) {
+    alert(playRound(getPlayerChoice(), getComputerChoice()));
+  }
+};
+
 function getComputerChoice() {
   let numberChoice = Math.floor(Math.random() * 3);
 
@@ -50,4 +56,3 @@ function playRound(playerChoice, computerChoice) {
     ? `You Win! ${playerChoice} beats ${computerChoice}!`
     : `You Lose! ${computerChoice} beats ${playerChoice}!`;
 }
-
