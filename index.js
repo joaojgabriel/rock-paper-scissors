@@ -45,7 +45,7 @@ function playRound(playerChoice, computerChoice) {
     case "Paper":
       playerWins = computerChoice === "Rock";
       break;
-    case "Scissor":
+    case "Scissors":
       playerWins = computerChoice === "Scissors";
       break;
     default:
