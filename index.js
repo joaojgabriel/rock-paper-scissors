@@ -10,3 +10,29 @@ function getComputerChoice() {
       return "Scissors";
   }
 }
+
+function playRound(playerChoice, computerChoice) {
+  if (playerChoice === computerChoice) {
+    return `It's a tie! Both chose ${playerChoice}!`;
+  }
+
+  let playerWins;
+
+  switch (playerChoice) {
+    case "Rock":
+      playerWins = computerChoice === "Scissors";
+      break;
+    case "Paper":
+      playerWins = computerChoice === "Rock";
+      break;
+    case "Scissor":
+      playerWins = computerChoice === "Scissors";
+      break;
+    default:
+      return "Invalid choice";
+  }
+
+  return playerWins
+    ? `You Win! ${playerChoice} beats ${computerChoice}!`
+    : `You Lose! ${computerChoice} beats ${playerChoice}!`;
+}
