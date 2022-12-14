@@ -26,8 +26,10 @@ function getComputerChoice() {
 
 function getPlayerChoice() {
   let input;
+  let isValidInput =
+    input === "rock" || input === "paper" || input === "scissors";
 
-  while (!(input === "rock" || input === "paper" || input === "scissors")) {
+  while (!isValidInput  ) {
     input = prompt("Choose Rock, Paper or Scissors").toLowerCase();
   }
 
