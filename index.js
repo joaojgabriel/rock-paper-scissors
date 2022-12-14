@@ -21,7 +21,7 @@ function getPlayerChoice() {
   let input;
 
   while (!(input === "rock" || input === "paper" || input === "scissors")) {
-    input = prompt("Choose Rock, Paper or Scissor").toLowerCase();
+    input = prompt("Choose Rock, Paper or Scissors").toLowerCase();
   }
 
   return capitalizeLowerCase(input);
