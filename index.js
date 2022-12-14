@@ -18,7 +18,7 @@ function getPlayerChoice() {
     input = prompt("Choose Rock, Paper or Scissor").toLowerCase();
   }
 
-  return capitalize(input);
+  return capitalizeLowerCase(input);
 }
 
 function capitalizeLowerCase(text) {
