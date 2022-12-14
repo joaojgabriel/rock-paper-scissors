@@ -18,8 +18,11 @@ function getPlayerChoice() {
     input = prompt("Choose Rock, Paper or Scissor").toLowerCase();
   }
 
-  let capitalizedInput = input.charAt(0).toUpperCase() + input.slice(1);
-  return capitalizedInput;
+  return capitalize(input);
+}
+
+function capitalize(text) {
+  return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
 }
 
 function playRound(playerChoice, computerChoice) {
@@ -47,3 +50,4 @@ function playRound(playerChoice, computerChoice) {
     ? `You Win! ${playerChoice} beats ${computerChoice}!`
     : `You Lose! ${computerChoice} beats ${playerChoice}!`;
 }
+
