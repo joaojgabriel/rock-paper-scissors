@@ -54,10 +54,13 @@ function playRound(playerChoice, computerChoice) {
 }
 
 const buttons = document.querySelectorAll("button");
+const resultsDiv = document.querySelector("#results");
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
-    console.log(
-      playRound(capitalizeLowerCase(e.target.className), getComputerChoice())
+    let result = playRound(
+      capitalizeLowerCase(e.target.className),
+      getComputerChoice()
     );
+    resultsDiv.textContent = result;
   });
 });
