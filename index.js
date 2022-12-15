@@ -2,17 +2,15 @@ const buttons = document.querySelectorAll("button");
 const resultsDiv = document.querySelector("#results");
 let playerScore = 0;
 let computerScore = 0;
-const playerDiv = document.querySelector("#player-score");
-const computerDiv = document.querySelector("#computer-score");
+const scores = document.querySelector("#scores");
+
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
     let result = playRound(
       capitalizeLowerCase(e.target.className),
       getComputerChoice()
     );
-    playerDiv.textContent = "Player: " + playerScore;
-    computerDiv.textContent = "Computer: " + computerScore;
-    resultsDiv.textContent = result;
+    scores.textContent = `Player: ${playerScore} Computer: ${computerScore}`;
   });
 });
 
