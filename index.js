@@ -52,3 +52,10 @@ function playRound(playerChoice, computerChoice) {
     ? `You Win! ${playerChoice} beats ${computerChoice}!`
     : `You Lose! ${computerChoice} beats ${playerChoice}!`;
 }
+
+const buttons = document.querySelectorAll("button");
+buttons.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    console.log(e.target.className);
+  });
+});
