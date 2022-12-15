@@ -10,6 +10,18 @@ buttons.forEach((button) => {
       capitalizeLowerCase(e.target.className),
       getComputerChoice()
     );
+    resultsDiv.textContent = result;
+    if (playerScore === 5) {
+      scores.textContent = "You won 5 rounds!";
+      playerScore = 0;
+      computerScore = 0;
+      return;
+    } else if (computerScore === 5) {
+      scores.textContent = "The computer won 5 rounds!";
+      playerScore = 0;
+      computerScore = 0;
+      return;
+    }
     scores.textContent = `Player: ${playerScore} Computer: ${computerScore}`;
   });
 });
