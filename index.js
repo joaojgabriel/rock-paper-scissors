@@ -1,3 +1,21 @@
+const buttons = document.querySelectorAll("button");
+const resultsDiv = document.querySelector("#results");
+let playerScore = 0;
+let computerScore = 0;
+const playerDiv = document.querySelector("#player-score");
+const computerDiv = document.querySelector("#computer-score");
+buttons.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    let result = playRound(
+      capitalizeLowerCase(e.target.className),
+      getComputerChoice()
+    );
+    playerDiv.textContent = "Player: " + playerScore;
+    computerDiv.textContent = "Computer: " + computerScore;
+    resultsDiv.textContent = result;
+  });
+});
+
 function getComputerChoice() {
   let numberChoice = Math.floor(Math.random() * 3);
 
@@ -48,19 +66,11 @@ function playRound(playerChoice, computerChoice) {
       return "Invalid choice";
   }
 
-  return playerWins
-    ? `You Win! ${playerChoice} beats ${computerChoice}!`
-    : `You Lose! ${computerChoice} beats ${playerChoice}!`;
+  if (playerWins) {
+    playerScore++;
+    return `You Win! ${playerChoice} beats ${computerChoice}!`;
+  } else {
+    computerScore++;
+    return `You Lose! ${computerChoice} beats ${playerChoice}!`;
+  }
 }
-
-const buttons = document.querySelectorAll("button");
-const resultsDiv = document.querySelector("#results");
-buttons.forEach((button) => {
-  button.addEventListener("click", (e) => {
-    let result = playRound(
-      capitalizeLowerCase(e.target.className),
-      getComputerChoice()
-    );
-    resultsDiv.textContent = result;
-  });
-});
